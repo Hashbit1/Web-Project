@@ -1,0 +1,102 @@
+<!-- Declares the doc type and version of HTML being used -->
+<!DOCTYPE html>
+<!-- Sets the language to English -->
+<html lang="en">
+
+<!-- Head section containing meta information, title, and CSS file links -->
+<head>
+    <!-- Defines the character encoding UTF-8 support -->
+    <meta charset="UTF-8">
+    <!-- Makes page responsive on every device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
+    <title>FitTrak | Fitness App</title>
+
+    <!-- Link to external CSS file for styling -->
+
+    <!-- Corrected CSS paths (Render + Local work properly) -->
+    <!-- Link to home section CSS file -->
+    <link rel="stylesheet" href="/css/home.css">
+    <!-- CSS for mobile screens -->
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 599px)">
+    <!-- CSS for tablet screens -->
+    <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width: 600px) and (max-width: 1023px)">
+    <!-- CSS for laptop and larger screens -->
+    <link rel="stylesheet" href="/css/laptop.css" media="screen and (min-width: 1024px)">
+</head> <!-- End of head section -->
+
+<!-- Body section holding all visible content on webpage -->
+<body>
+
+    <!-- Header Section -->
+    <!-- Header tag for top of the page -->
+    <header>
+        <!-- Corrected image path for Render -->
+        <!-- Shows team logo image *subject to change* -->
+        <img src="/images/logo.png" alt="FitTrak Logo" class="logo">
+
+        <!-- Navigation bar -->
+        <nav>
+            <!-- Unordered list holding all nav links -->
+            <ul>
+                <!-- Link to home page -->
+                <li><a href="/">Home</a></li>
+                <!-- Link that goes to the workouts list page -->
+                <li><a href="/viewWorkouts">View Workouts</a></li>
+                <!-- Link that goes to the add workout page -->
+                <li><a href="/addWorkout">Add Workout</a></li>
+            </ul> <!-- End of nav list -->
+        </nav> <!-- End of nav bar -->
+    </header> <!-- End of header section -->
+
+    <!-- Hero Section -->
+    <!-- Section that introduces the website aka the hero banner -->
+    <section class="hero">
+        <!-- Main title or heading for the page -->
+        <h1>Welcome to FitTrak</h1>
+        <!-- Short description of the app -->
+        <p>Your personal fitness tracker to log, monitor, and help achieve your goals!</p>
+        <!-- Button that links to the add Workout page -->
+        <a href="/addWorkout" class="btn">Start Workout</a>
+    </section> <!-- End of hero section -->
+
+    <!-- Features Section -->
+    <!-- Main tag which holds the main content of the page -->
+    <main>
+        <!-- Section showing the app features -->
+        <section class="features">
+            <!-- Article block for the first feature -->
+            <article>
+                <!-- Subheading for first feature -->
+                <h2>📊 Track Progress</h2>
+                <!-- Description of feature 1 -->
+                <p>Log every workout and visualize your improvements over time</p>
+            </article> <!-- End of first feature -->
+
+            <!-- Article block for the second feature -->
+            <article>
+                <!-- Subheading for second feature -->
+                <h2>🏋️‍♂️ Add Workouts</h2>
+                <!-- Description of feature 2 -->
+                <p>Record sets, reps, and notes to build your perfect routine.</p>
+            </article> <!-- End of second feature -->
+
+            <!-- Article block for third feature -->
+            <article>
+                <!-- Subheading for third feature -->
+                <h2>🎯 Set Goals</h2>
+                <!-- Description for feature 3 -->
+                <p>Stay motivated with personal goals and see your consistency improve.</p>
+            </article> <!-- End of third feature -->
+        </section> <!-- End of features section -->
+    </main> <!-- End of main content area -->
+
+    <!-- Footer Section -->
+    <!-- Footer tag for bottom section -->
+    <footer>
+        <!-- Copyright text that shows the current year -->
+        <p>&copy; <%= new Date().getFullYear() %> Team FitTrak | Built by Sahran, Muhammad, and Hashim</p>
+    </footer> <!-- End of footer section -->
+
+</body> <!-- End of body section -->
+</html> <!-- End of HTML document -->

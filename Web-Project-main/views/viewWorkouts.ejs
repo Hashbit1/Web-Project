@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Workouts | FitTrak</title>
+
+  <!-- Correct CSS paths for Render -->
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 599px)">
+  <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width: 600px) and (max-width: 1023px)">
+  <link rel="stylesheet" href="/css/laptop.css" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="/images/logo.png" alt="FitTrak Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/viewWorkouts">View Workouts</a></li>
+        <li><a href="/addWorkout">Add Workout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Your Workout Log</h1>
+    <p>Here you can see all the workouts you’ve added.</p>
+
+    <% if (workouts.length === 0) { %>
+      <p>No workouts added yet. Click below to start!</p>
+      <a href="/addWorkout" class="btn">Add a Workout</a>
+    <% } else { %>
+      <div class="features">
+        <% workouts.forEach(workout => { %>
+          <article class="card">
+            <h3><%= workout.name %></h3>
+            <p><strong>Sets:</strong> <%= workout.sets %></p>
+            <p><strong>Reps:</strong> <%= workout.reps %></p>
+            <p><strong>Weight:</strong> <%= workout.weight %> kg</p>
+
+            <!-- Edit form (PUT) -->
+            <form action="/api/workouts/<%= workout.id %>" method="POST" class="edit-form">
+              <input type="hidden" name="_method" value="PUT">
+              <input type="text" name="name" value="<%= workout.name %>" required>
+              <input type="number" name="sets" value="<%= workout.sets %>" required>
+              <input type="number" name="reps" value="<%= workout.reps %>" required>
+              <input type="number" name="weight" value="<%= workout.weight %>" step="0.1" required>
+              <button type="submit">Update</button>
+            </form>
+
+            <!-- Delete form (DELETE) -->
+            <form action="/api/workouts/<%= workout.id %>" method="POST" onsubmit="return confirm('Delete this workout?');" style="margin-top:8px;">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="danger">Delete</button>
+            </form>
+          </article>
+        <% }) %>
+      </div>
+    <% } %>
+
+    <a href="/" class="btn" style="background-color: yellow; color: black; margin-top: 20px;">Back to Home</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Team FitTrak | Built by Sahran, Muhammad, and Hashim</p>
+  </footer>
+</body>
+</html>

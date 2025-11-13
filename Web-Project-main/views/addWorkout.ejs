@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Workout | FitTrak</title>
+
+  <!-- Correct CSS paths for Render -->
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 599px)">
+  <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width: 600px) and (max-width: 1023px)">
+  <link rel="stylesheet" href="/css/laptop.css" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="/images/logo.png" alt="FitTrak Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/viewWorkouts">View Workouts</a></li>
+        <li><a href="/addWorkout">Add Workout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Add a New Workout</h1>
+    <p>Here you can log your exercises, sets, reps, and weights.</p>
+
+    <!-- Workout Form -->
+    <form action="/api/workouts" method="POST" class="workout-form" style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 400px; margin: 0 auto;">
+      <label for="name"><strong>Exercise Name:</strong></label>
+      <input type="text" id="name" name="name" placeholder="e.g. Bench Press" required style="padding: 8px; width: 100%; border-radius: 5px; border: none;">
+
+      <label for="sets"><strong>Sets:</strong></label>
+      <input type="number" id="sets" name="sets" min="1" required style="padding: 8px; width: 100%; border-radius: 5px; border: none;">
+
+      <label for="reps"><strong>Reps:</strong></label>
+      <input type="number" id="reps" name="reps" min="1" required style="padding: 8px; width: 100%; border-radius: 5px; border: none;">
+
+      <label for="weight"><strong>Weight (kg):</strong></label>
+      <input type="number" id="weight" name="weight" min="0" placeholder="Optional" style="padding: 8px; width: 100%; border-radius: 5px; border: none;">
+
+      <button type="submit" class="btn" style="margin-top: 15px;">Save Workout</button>
+    </form>
+
+    <a href="/" class="btn" style="background-color: yellow; color: black; margin-top: 25px;">Back to Home</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Team FitTrak | Built by Sahran, Muhammad, and Hashim</p>
+  </footer>
+</body>
+</html>
+
