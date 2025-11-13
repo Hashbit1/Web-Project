@@ -42,7 +42,7 @@
             <p><strong>Reps:</strong> <%= workout.reps %></p>
             <p><strong>Weight:</strong> <%= workout.weight %> kg</p>
 
-            <!-- Edit form (PUT) -->
+            <!-- The Edit form -->
             <form action="/api/workouts/<%= workout.id %>" method="POST" class="edit-form">
               <input type="hidden" name="_method" value="PUT">
               <input type="text" name="name" value="<%= workout.name %>" required>
@@ -52,7 +52,7 @@
               <button type="submit">Update</button>
             </form>
 
-            <!-- Delete form (DELETE) -->
+            <!-- The Delete form -->
             <form action="/api/workouts/<%= workout.id %>" method="POST" onsubmit="return confirm('Delete this workout?');" style="margin-top:8px;">
               <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="danger">Delete</button>

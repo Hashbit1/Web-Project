@@ -16,13 +16,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// remove debug logger (was logging every request)
-// app.use((req, res, next) => {
-//   console.log(`[REQ] ${req.method} ${req.url}`, req.body && Object.keys(req.body).length ? req.body : "");
-//   next();
-//});
+// Debug logger to see incoming method + url
+app.use((req, res, next) => {
+  console.log(`[REQ] ${req.method} ${req.url}`, req.body && Object.keys(req.body).length ? req.body : "");
+  next();
+});
 
-// keep method-override
+// Robust body-based method override (works reliably for form POSTs)
 app.use(methodOverride((req) => {
   if (req.body && typeof req.body === "object" && "_method" in req.body) {
     const method = req.body._method;
@@ -31,7 +31,14 @@ app.use(methodOverride((req) => {
   }
 }));
 
-// Static file handling 
+// Serve static files early and log requests (remove logging after debugging)
+app.use((req, res, next) => {
+  if (req.path.startsWith("/css") || req.path.startsWith("/images")) {
+    console.log("[STATIC REQ]", req.method, req.path);
+  }
+  next();
+});
+
 app.use("/css", express.static(path.join(__dirname, "public/css")));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use(express.static(path.join(__dirname, "public"))); // fallback
