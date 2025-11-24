@@ -1,83 +1,119 @@
-FitRak – Fitness Tracking Web App 
+# FitTrak – Fitness Tracking Web App
 
---Overview
-FitRak is a web application that allows users to create, view, edit, and delete workout sessions.  
-It’s designed to help users stay consistent, track progress, and manage their fitness routines efficiently.
+## Overview
+FitTrak is an application that allows users to record workout sessions, look at past workouts, edit workouts, and delete them.
 
---What We Used
-- HTML5, CSS3
-- Node.js, Express.js
-- EJS (for templates)
-- Render (for deployment)
+---
 
---Group Members
+## Technologies Used
+### Frontend
+- HTML5  
+- CSS3  
+- EJS Templates  
+
+### Backend
+- Node.js  
+- Express.js  
+- MongoDB (Mongoose)  
+- bcryptjs (password hashing)  
+- express-session (user authentication)
+
+---
+
+## Group Members
 - Sahran – Frontend Developer  
 - Muhammad – Backend Developer  
-- Hashim – Deployment & Documentation
+- Hashim – Deployment & Documentation  
 
---Features (Part 1)
-- Landing Page with team logo and navigation  
+---
+
+## Features 
+- Landing page with team logo and navigation  
 - Add new workouts  
-- View all workouts in a table format  
-- Edit or Delete workouts  
-- Basic functional design (no login system yet)
-
---Video Demo
-Link: 
-
-<<<<<<< HEAD
---
-=======
--- External Code Citations
-- **Express.js Setup (Server Initialization)**
-**Referenced in:** `app.js`  
-**Source:** [Express.js Documentation – Hello World Example](https://expressjs.com/en/starter/hello-world.html)  
-**Used for:**  
-- Basic server creation (`const express = require('express')`)  
-- Setting up the port and response rendering (`app.listen()`, `res.render()`)  
-**Modification:**  
-- Expanded to support EJS templates and multiple CRUD routes (`/add`, `/edit`, `/delete`).
-
-- **EJS Template Syntax**
-**Referenced in:** `views/index.ejs` and `views/edit.ejs`  
-**Source:** [EJS Official Documentation](https://ejs.co/#docs)  
-**Used for:**  
-- Looping and conditionals with `<% %>` and `<%= %>` syntax  
-- Rendering workouts dynamically inside HTML tables  
-**Modification:**  
-- Combined with Express routes for dynamic rendering of fitness data.
-
-- **CRUD Delete Route Logic**
-**Referenced in:** `app.js`  
-**Source:** [Stack Overflow – How to Delete an Item in Express](https://stackoverflow.com/questions/18647182/how-to-delete-an-item-in-express)  
-**Used for:**  
-- Correct syntax for form-based deletion using `app.post('/delete/:id')`.  
-**Modification:**  
-- Integrated into FitRak to remove items from the in-memory `workouts` array.
+- View all workouts  
+- Edit workouts  
+- Delete workouts
   
-- **Responsive CSS Media Queries**
-**Referenced in:** `/public/css/mobile.css`, `/tablet.css`, `/laptop.css`  
-**Source:** [W3Schools – CSS Media Queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)  
-**Used for:**  
-- Syntax for applying custom styles to mobile, tablet, and laptop screen widths.  
-**Modification:**  
-- Custom colors, layout adjustments, and typography added for FitRak design.
+---
 
--**Semantic HTML5 Tag Usage**
-**Referenced in:** `index.ejs`  
-**Source:** [MDN Web Docs – HTML5 Semantics](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html)  
-**Used for:**  
-- Correct use of semantic elements like `<header>`, `<main>`, `<section>`, `<article>`, and `<footer>`.  
-**Modification:**  
-- Implemented throughout the EJS files for accessibility and clean structure.
+# Outside Code Citations 
 
---**Render Deployment Setup**
-**Referenced in:** `README.md` (Deployment Section)  
-**Source:** [Render Docs – Deploying Node Express App](https://render.com/docs/deploy-node-express-app)  
-**Used for:**  
-- Understanding how to connect GitHub repo to Render and configure build/start commands.  
-**Modification:**  
-- Adjusted build/start commands to match FitRak’s file structure.
+Below are all external code used in this project.
+
+---
+
+## 1. Express.js Server Setup
+Referenced In: app.js  
+Source: https://expressjs.com/en/starter/hello-world.html  
+
+Function:
+- Creating the Express server  
+- Basic route handling pattern  
+- `app.listen()` setup  
+
+---
+
+## 2. EJS Syntax & Rendering
+Referenced In: All .ejs template files  
+Source: https://ejs.co  
+
+Function:
+- `<% %>` logic tags  
+- `<%= %>` output rendering  
+- Looping over workout data  
+- Renders dynamic content  
+
+---
+
+## 3. bcryptjs Password Hashing
+Referenced In: routes/authRoutes.js  
+Source: https://www.npmjs.com/package/bcryptjs  
+
+Function:
+- Hashing passwords during registration  
+- Comparing hashed passwords during login  
+
+---
+
+## 4. MongoDB and Mongoose Model Patterns
+Referenced In: models/User.js, models/Workout.js  
+Source: https://mongoosejs.com/docs/models.html  
+
+Function:
+- Defining schemas  
+- Creating models  
+- CRUD operations using `find`, `create`, `update`, `delete`  
+
+---
+
+## 5. method-override for PUT/DELETE
+Referenced In: app.js  
+Source: https://www.npmjs.com/package/method-override  
+
+Function:
+- Allowing PUT and DELETE HTTP requests from HTML forms  
+- Allows `_method` override for update/delete operations  
+
+---
+
+## 6. CSS Media Query Syntax
+Referenced In: /public/css/mobile.css, tablet.css, laptop.css  
+Source: https://www.w3schools.com/css/css_rwd_mediaqueries.asp  
+
+Function:
+- Media query syntax  
+- Supporting mobile, tablet, and desktop responsive layouts  
+
+---
+
+## 7. Semantic HTML5 Tags
+Referenced In: All .ejs template files  
+Source: https://developer.mozilla.org/en-US/docs/Web
+
+Function:
+- Makes ure the webpages having good structure with elements like `<header>`, `<main>`, `<section>`, `<article>`, and `<footer>`  
+- Better readability and organization of the page layout  
+- Helps browsers and screen readers understand the purpose of each page   
+- Allows cleaner, and more accessible templates for the FitTrak user interface
   
->>>>>>> 1f3950c23244c09aa17fb38ab64693704285313b
 © 2025 FitRak - | Hashim-Sahran-Muhammad
