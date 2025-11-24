@@ -1,0 +1,51 @@
+/* ===================================== */
+/* TABLET.CSS */
+/* ===================================== */
+
+/* This section adjusts the layout for tablets */
+
+/* Adjust hero section spacing for larger tablet displays */
+.hero {
+  padding: 80px 40px;
+}
+
+/* Increase the hero heading font size slightly */
+.hero h1 {
+  font-size: 2.4rem;
+}
+
+/* Adjust the hero paragraph font for tablet readability */
+.hero p {
+  font-size: 1.1rem;
+}
+
+/* Adjust navigation layout for wider screens */
+nav ul {
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Slightly increases the logo size for tablets */
+.logo {
+  width: 75px;
+}
+
+/* Makes feature cards fit nicely in two columns */
+.features {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+}
+
+/* Adjust width of each feature card for tablet view */
+.features article {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+/* Adjust footer padding for better spacing */
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+}

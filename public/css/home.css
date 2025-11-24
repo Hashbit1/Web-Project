@@ -1,0 +1,164 @@
+/* === HOME.CSS === */
+/* This file styles the main layout design for the landing or home page on desktop screens */
+
+/*=========================================*/
+/* GENERAL PAGE STYLES */
+/*=========================================*/
+
+body {
+    /* Sets a modern and clean font for the entire page */
+    font-family: 'Poppins', sans-serif;
+    /* Removes default white space around page edges */
+    margin: 0;
+    /* Removes any default internal spacing */
+    padding: 0;
+    /* Adds blue gradient backround from dark to light */
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    /* Sets default text color to white for better contrast */
+    color: #fff;
+    /* Centers all text content horizontally */
+    text-align: center;
+}
+
+/*=========================================*/
+/* HEADER AND NAVIGATION BAR */
+/*=========================================*/
+
+header {
+  /* Places the logo and navigation bar side by side */ 
+  display: flex; 
+  /* Pushes the logo to the left and navigation bar to the right */
+  justify-content: space-between; 
+  /* Centers both items inside the header vertically */
+  align-items: center; 
+  /* Adds space inside the header (top/bottom = 15px, left/right = 50px) */
+  padding: 15px 50px; 
+  /* Semi-transparent black background for header */
+  background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.logo {
+  /* Sets the logo width to 80 pixels */  
+  width: 80px; 
+}
+
+nav ul {
+  /* Removes the bullet points from the list */  
+  list-style: none; 
+  /* Puts the navigation links in a row */
+  display: flex; 
+  /* Adds 20px space between each of the link */
+  gap: 20px;
+  /* Removes the default top/bottom margins */
+  margin: 0; 
+  /* Removes the default left padding */
+  padding: 0; 
+}
+
+nav a {
+  /* Makes all the links white */
+  color: white; 
+  /* Removes the default underline from links */
+  text-decoration: none; 
+  /* Makes link text bold */
+  font-weight: bold; 
+  /* Animates color changes when hovering */
+  transition: 0.3s;
+}
+
+nav a:hover {
+  /* Changes link color to yellow when hovered */
+  color: #ffcc00; 
+}
+
+/*=========================================*/
+/* HERO SECTION aka Welcome Banner */
+/*=========================================*/
+
+.hero {
+  /* Adds large space inside the hero for breathing room */
+  padding: 100px 20px;
+  /* Gives the hero a giagonal blue gradient */
+  background: linear-gradient(120deg, #2a5298, #1e3c72); 
+}
+
+.hero h1 {
+  /* Makes main heading large */
+  font-size: 3rem; 
+  /* Adds space below heading */
+  margin-bottom: 10px; 
+}
+
+.hero p {
+  /* Slightly larger font for the subtitles */
+  font-size: 1.2rem; 
+  /* Space below paragraph */
+  margin-bottom: 20px; 
+}
+
+.btn {
+/* Yellow button background */
+  background-color: #ffcc00; 
+/* Black button text */
+  color: #000; 
+/* Adds space inside the button */
+  padding: 10px 20px; 
+/* Rounds the button edges */
+  border-radius: 30px; 
+/* Removes the underline from link */
+  text-decoration: none; 
+/* Makes the text bold */
+  font-weight: bold; 
+/* Adds smooth hover animation */
+  transition: 0.3s; 
+}
+
+.btn:hover {
+  /* Changes the button background to white when hovering */
+  background-color: #fff; 
+}
+
+/* FEATURES SECTION aka Three Cards Below Hero */
+.features {
+/* Places all three feature boxes in a row */
+  display: flex; 
+/* Centers them horizontally */
+  justify-content: center; 
+/* Adds 30px space between each card */
+  gap: 30px; 
+/* Adds space around the section */
+  padding: 40px; 
+/* Allows wrapping on smaller screens */
+  flex-wrap: wrap; 
+}
+
+.features article {
+  /* Light transparent box background */
+  background: rgba(255, 255, 255, 0.1); 
+  /* Adds space inside each card */
+  padding: 20px; 
+  /* Rounds the corners of each card */
+  border-radius: 15px; 
+  /* Makes a fixed width for each card */
+  width: 250px; 
+  /* Adds smooth animation on the hover */
+  transition: transform 0.3s ease; 
+}
+
+.features article:hover {
+  /* Grows the card slightly when hovered */
+  transform: scale(1.05); 
+}
+
+/*=========================================*/
+/* FOOTER */
+/*=========================================*/
+
+footer {
+  /* Adds dark transparent footer background */
+  background-color: rgba(0, 0, 0, 0.3); 
+  /* Space inside footer */
+  padding: 20px; 
+  /* Slightly smaller text for footer */
+  font-size: 0.9rem; 
+}

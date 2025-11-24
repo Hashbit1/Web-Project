@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Workout | FitTrak</title>
+
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 599px)">
+  <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width: 600px) and (max-width: 1023px)">
+  <link rel="stylesheet" href="/css/laptop.css" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+
+<header>
+  <img src="/images/logo.png" alt="FitTrak Logo" class="logo">
+  <%- include("partials/navbar", { user: user }) %>
+</header>
+
+<section class="hero">
+  <h1>Add a New Workout</h1>
+  <p>Log your exercises, sets, reps, and weights.</p>
+
+  <form action="/addWorkout" method="POST" class="workout-form" style="display:flex;flex-direction:column;align-items:center;gap:10px;max-width:400px;margin:0 auto;">
+    
+    <label><strong>Exercise Name:</strong></label>
+    <input type="text" name="name" required>
+
+    <label><strong>Sets:</strong></label>
+    <input type="number" name="sets" min="1" required>
+
+    <label><strong>Reps:</strong></label>
+    <input type="number" name="reps" min="1" required>
+
+    <label><strong>Weight (kg):</strong></label>
+    <input type="number" name="weight" min="0">
+
+    <button type="submit" class="btn" style="margin-top:15px;">Save Workout</button>
+  </form>
+
+  <a href="/" class="btn" style="background-color:yellow;color:black;margin-top:25px;">Back to Home</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 Team FitTrak | Built by Sahran, Muhammad, and Hashim</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* ===================================== */
+/* LAPTOP.CSS - Styles for large screens */
+/* ===================================== */
+
+/* This section adjusts the layout for desktops and laptops */
+
+/* Increases the hero section padding to fill wide screens */
+.hero {
+  padding: 120px 80px;
+}
+
+/* Make hero heading larger for visual impact */
+.hero h1 {
+  font-size: 3.2rem;
+}
+
+/* Slightly increase paragraph size for better readability */
+.hero p {
+  font-size: 1.3rem;
+}
+
+/* Adjusts the button padding for a more proportionate look */
+.btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+}
+
+/* Give feature section more breathing space */
+.features {
+  gap: 40px;
+  padding: 50px 60px;
+}
+
+/* Expand feature card width for large screens */
+.features article {
+  width: 280px;
+  padding: 25px;
+}
+
+/* Make logo slightly larger for desktop */
+.logo {
+  width: 90px;
+}
+
+/* Center footer content and give extra spacing */
+footer {
+  padding: 25px;
+  font-size: 1rem;
+}

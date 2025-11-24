@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Workouts | FitTrak</title>
+
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 599px)">
+  <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width: 600px) and (max-width: 1023px)">
+  <link rel="stylesheet" href="/css/laptop.css" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+
+<header>
+  <img src="/images/logo.png" alt="FitTrak Logo" class="logo">
+  <%- include("partials/navbar", { user: user }) %>
+</header>
+
+<section class="hero">
+  <h1>Your Workout Log</h1>
+  <p>Here you can see all the workouts you added.</p>
+
+  <% if (workouts.length === 0) { %>
+
+    <p>No workouts added yet.</p>
+    <a href="/addWorkout" class="btn">Add a Workout</a>
+
+  <% } else { %>
+
+    <div class="features">
+
+      <% workouts.forEach(workout => { %>
+        <article class="card">
+
+          <h3><%= workout.name %></h3>
+          <p><strong>Sets:</strong> <%= workout.sets %></p>
+          <p><strong>Reps:</strong> <%= workout.reps %></p>
+          <p><strong>Weight:</strong> <%= workout.weight ? workout.weight + " kg" : "N/A" %></p>
+          
+          <a href="/editWorkout/<%= workout._id %>" class="btn">Edit</a>
+          <a href="/deleteWorkout/<%= workout._id %>"
+             class="danger"
+             onclick="return confirm('Are you sure you want to delete this workout?');">
+            Delete
+          </a>
+
+        </article>
+      <% }) %>
+
+    </div>
+
+  <% } %>
+
+  <a href="/" class="btn" style="background-color: yellow; color: black; margin-top: 20px;">Back to Home</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 Team FitTrak | Built by Sahran, Muhammad, and Hashim</p>
+</footer>
+
+</body>
+</html>

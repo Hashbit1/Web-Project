@@ -1,0 +1,63 @@
+/* ===================================== */
+/* MOBILE.CSS */
+/* ===================================== */
+
+/* This file contains styles specifically for mobile devices*/
+/* Center and stack header items vertically */
+header {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Make the logo smaller for mobile screens */
+.logo {
+  width: 60px;
+}
+
+/* Adjust navigation list layout for mobile */
+nav ul {
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* Make hero section text smaller and compact */
+.hero {
+  padding: 60px 20px;
+}
+
+/* Reduce hero heading size */
+.hero h1 {
+  font-size: 1.8rem;
+}
+
+/* Adjust hero paragraph font for readability */
+.hero p {
+  font-size: 1rem;
+}
+
+/* Adjust the call-to-action button size */
+.btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Stack feature cards vertically for small screens */
+.features {
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Make each card full width (fit the screen) */
+.features article {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+/* Adjust footer styles for mobile */
+footer {
+  font-size: 0.8rem;
+  padding: 15px;
+}
